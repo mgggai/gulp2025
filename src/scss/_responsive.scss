@@ -1,0 +1,26 @@
+@use "variables" as *;
+@use "sass:math";
+
+// адаптивные стили через vw
+@function vw($value, $base: $laptop) {
+	@return math.div($value, $base) * 100vw;
+}
+// адаптивные стили через vwt
+@function vwt($value, $base: $tablet + 188) {
+	@return math.div($value, $base) * 100vw;
+}
+
+// обычные пиксельные стили
+@function px($value, $base: $laptop) {
+	@return math.div($value * ($laptop * 1px), $base);
+}
+
+// vh - для адаптации стилей под высоту страницы
+@function vh($value, $base: $desktop-vh) {
+	@return math.div($value, $base) * 100vh;
+}
+
+// vmin - для мобильных устройств
+@function vm($value, $base: $mobile + 42) {
+	@return math.div($value, $base) * 100vmin;
+}

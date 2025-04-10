@@ -1,0 +1,74 @@
+@use "breakpoint" as *;
+
+.is-hidden {
+	display: none !important;
+}
+
+.is-hide {
+	opacity: 0;
+}
+
+.for-desktop {
+	@include devices {
+		display: none !important;
+	}
+}
+
+.for-tablet {
+	@include desktop {
+		display: none !important;
+	}
+
+	@include mobile {
+		display: none !important;
+	}
+}
+
+.for-mobile {
+	@include desktop {
+		display: none !important;
+	}
+
+	@include tablet {
+		display: none !important;
+	}
+}
+
+.for-devices {
+	@include desktop {
+		display: none !important;
+	}
+}
+
+.no-scroll {
+	overflow-y: hidden;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.none {
+	display: none !important;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	white-space: nowrap;
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}

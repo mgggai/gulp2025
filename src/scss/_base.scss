@@ -1,0 +1,118 @@
+@use 'variables' as *;
+@use 'responsive' as *;
+@use "breakpoint" as *;
+
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	position: relative;
+	overflow-x: hidden;
+	min-height: 100vh;
+	box-sizing: border-box;
+	font-family: $font-main;
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	text-decoration-skip: objects;
+	text-rendering: optimizeLegibility;
+	text-size-adjust: 100%;
+	-webkit-tap-highlight-color: transparent;
+	font-family: "InterTight";
+	color: #000;
+	background-color: #fff;
+}
+
+
+
+p {
+	margin: 0;
+}
+
+a,
+button {
+	outline: none;
+	transition: 0.3s;
+	cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+	color: currentColor;
+}
+
+svg {
+	display: block;
+	flex: 0 0 auto;
+	width: 100%;
+	height: 100%;
+	fill: currentColor;
+}
+
+
+img {
+	vertical-align: top;
+	max-width: 100%;
+        max-height: 100%;
+	user-select: none;
+        object-fit: cover;
+}
+
+
+fieldset {
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+
+ul,
+li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+video {
+	outline: none;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+iframe {
+	display: block;
+}
+
+
+.container {
+	position: relative;
+	z-index: 1;
+	margin: 0 auto;
+	width: 100%;
+	max-width: vw($container-laptop);
+	border: 1px solid #000;
+	@include desktop-xl {
+		max-width: px($container-fullhd);
+	}
+	@include tablet{
+		max-width: 100%;
+		padding-left: vwt($container-padding-tablet);
+		padding-right: vwt($container-padding-tablet); 
+	}
+	@include mobile {
+		max-width: 100%;
+		padding-left: vm($container-padding-mobile);
+		padding-right: vm($container-padding-mobile);
+	}
+}
+
+input {
+	outline: none;
+}
+
+
